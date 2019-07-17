@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.4
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=java_graphql
+      - POSTGRES_USER=java_graphql
+      - POSTGRES_PASSWORD=java_graphql
+      - MAX_CONNECTIONS=300
+    networks:
+      - java_graphql
+    volumes:
+      - ./data/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+networks:
+  java_graphql:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.68.11.0/24
