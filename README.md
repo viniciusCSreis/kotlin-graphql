@@ -1,5 +1,4 @@
-# java-graphql
-Kotlin > java
+# Kotlin-graphql
 
 ```
 $: docker-compose up (apesar de nao salvar no banco tem que subir o docker por causa do driver :( )
